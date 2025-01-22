@@ -1,0 +1,8 @@
+---
+scanserv_enabled: false
+
+scanserv_container_name: "scanserv"
+scanserv_image_name: "sbs20/scanservjs"
+scanserv_image_version: "latest"
+scanserv_port: "8080"
+

@@ -368,6 +368,10 @@
       tags:
         - sabnzbd
 
+    - role: scanserv
+      tags:
+        - scanserv
+
     - role: sickchill
       tags:
         - sickchill
