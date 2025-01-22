@@ -1,0 +1,33 @@
+---
+- name: Start PlexTraktSync
+  block:
+    - name: Create PlexTraktSync Directories
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        # mode: 0755
+      with_items:
+        - "{{ plextraktsync_config_directory }}"
+
+    - name: PlexTraktSync Docker Container
+      community.docker.docker_container:
+        name: "{{ plextraktsync_container_name }}"
+        image: "{{ plextraktsync_image_name }}:{{ plextraktsync_image_version }}"
+        pull: true
+        volumes:
+          - "{{ plextraktsync_config_directory }}:/config:rw"
+        env:
+          TZ: "{{ plextraktsync_timezone }}"
+          PUID: "{{ plextraktsync_user_id }}"
+          PGID: "{{ plextraktsync_group_id }}"
+        restart_policy: unless-stopped
+        memory: "{{ plextraktsync_memory }}"
+  when: plextraktsync_enabled is true
+
+- name: Stop PlexTraktSync
+  block:
+    - name: Stop PlexTraktSync
+      community.docker.docker_container:
+        name: "{{ plextraktsync_container_name }}"
+        state: absent
+  when: plextraktsync_enabled is false

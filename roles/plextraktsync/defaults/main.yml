@@ -1,0 +1,20 @@
+---
+plextraktsync_enabled: false
+
+# directories
+plextraktsync_config_directory: "{{ docker_home }}/plextraktsync/config"
+
+# uid / gid
+plextraktsync_user_id: "1000"
+plextraktsync_group_id: "1000"
+
+# network
+
+plextraktsync_timezone: "{{ ansible_nas_timezone }}"
+
+plextraktsync_container_name: "plextraktsync"
+plextraktsync_image_name: "lscr.io/linuxserver-labs/plextraktsync"
+plextraktsync_image_version: "latest"
+
+# specs
+plextraktsync_memory: 1g
