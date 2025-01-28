@@ -9,3 +9,5 @@ homarr_image_name: "ghcr.io/homarr-labs/homarr"
 homarr_image_version: "latest"
 homarr_port: "7575"
 
+homarr_secret_key: "6750e998fa0b14c6643358da47c7c62d0e8d1ded8113a1e6e563699e796f1c69"
+
