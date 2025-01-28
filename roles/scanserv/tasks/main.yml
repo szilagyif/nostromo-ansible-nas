@@ -1,0 +1,23 @@
+---
+- name: Start ScanServ
+  block:
+    - name: ScanServ Docker Container
+      community.docker.docker_container:
+        name: "{{ scanserv_container_name }}"
+        image: "{{ scanserv_image_name }}:{{ scanserv_image_version }}"
+        pull: true
+        volumes:
+          - "/var/run/dbus:/var/run/dbus"
+        ports:
+          - "{{ scanserv_port }}:8080"
+        privileged: true
+        restart_policy: unless-stopped
+  when: scanserv_enabled is true
+
+- name: Stop ScanServ
+  block:
+    - name: Stop ScanServ
+      community.docker.docker_container:
+        name: "{{ scanserv_container_name }}"
+        state: absent
+  when: scanserv_enabled is false

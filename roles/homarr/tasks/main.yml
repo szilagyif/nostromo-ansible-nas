@@ -1,0 +1,25 @@
+---
+- name: Start Homarr
+  block:
+    - name: Homarr Docker Container
+      community.docker.docker_container:
+        name: "{{ homarr_container_name }}"
+        image: "{{ homarr_image_name }}:{{ homarr_image_version }}"
+        pull: true
+        volumes:
+          #- /var/run/docker.sock:/var/run/docker.sock Enable for Docker integration
+          - "{{ homarr_data_directory }}/appdata:/appdata"
+        ports:
+          - "{{ homarr_port }}:7575"
+        env:
+          SECRET_ENCRYPTION_KEY: "{{ homarr_secret_key }}"
+        restart_policy: unless-stopped
+  when: homarr_enabled is true
+
+- name: Stop Homarr
+  block:
+    - name: Stop Homarr
+      community.docker.docker_container:
+        name: "{{ homarr_container_name }}"
+        state: absent
+  when: homarr_enabled is false

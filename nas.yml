@@ -181,6 +181,10 @@
       tags:
         - hello_world
 
+    - role: homarr
+      tags:
+        - homarr
+
     - role: homeassistant
       tags:
         - homeassistant
@@ -324,6 +328,9 @@
     - role: plex
       tags:
         - plex
+    - role: plextraktsync
+      tags:
+        - plextraktsync
 
     - role: portainer
       tags:
@@ -364,6 +371,10 @@
     - role: sabnzbd
       tags:
         - sabnzbd
+
+    - role: scanserv
+      tags:
+        - scanserv
 
     - role: sickchill
       tags:
