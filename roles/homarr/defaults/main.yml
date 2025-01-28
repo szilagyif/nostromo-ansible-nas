@@ -1,0 +1,11 @@
+---
+homarr_enabled: false
+
+# directories
+homarr_data_directory: "{{ docker_home }}/homarr"
+
+homarr_container_name: "homarr"
+homarr_image_name: "ghcr.io/homarr-labs/homarr"
+homarr_image_version: "latest"
+homarr_port: "7575"
+
