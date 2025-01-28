@@ -12,7 +12,7 @@
         ports:
           - "{{ homarr_port }}:7575"
         env:
-          - SECRET_ENCRYPTION_KEY: "{{ homarr_secret_key }}"
+          SECRET_ENCRYPTION_KEY: "{{ homarr_secret_key }}"
         restart_policy: unless-stopped
   when: homarr_enabled is true
 
