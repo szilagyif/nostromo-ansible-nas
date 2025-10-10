@@ -387,6 +387,10 @@
     - role: silverbullet
       tags:
         - silverbullet
+        -
+    - role: slskd
+      tags:
+        - slskd
 
     - role: sonarr
       tags:
