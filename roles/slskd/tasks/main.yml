@@ -27,7 +27,7 @@
           PUID: "{{ slskd_user_id }}"
           PGID: "{{ slskd_group_id }}"
           SLSKD_REMOTE_CONFIGURATION: "true"
-          SLSKD_SLSK_USERNAME: "nostromo"
+          SLSKD_SLSK_USERNAME: "nostromou"
           SLSKD_SLSK_PASSWORD: "n1pwtromo"
           SLSKD_DOWNLOADS_DIR: "/downloads"
           SLSKD_INCOMPLETE_DIR: "/incomplete"
