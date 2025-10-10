@@ -1,0 +1,42 @@
+---
+- name: Start Slskd
+  block:
+    - name: Create slskd Directories
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        # mode: 0755
+      with_items:
+        - "{{ slskd_config_directory }}"
+
+    - name: slskd Docker Container
+      community.docker.docker_container:
+        name: "{{ slskd_container_name }}"
+        image: "{{ slskd_image_name }}:{{ slskd_image_version }}"
+        pull: true
+        volumes:
+          - "{{ slskd_config_directory }}:/app"
+          - "{{ slskd_download_dir }}:/downloads:rw"
+          - "{{ slskd_incomplete_dir }}:/incomplete:rw"
+        ports:
+          - "{{ slskd_http_port }}:5030"
+          - "{{ slskd_https_port }}:5031"
+          - "{{ slskd_external_port }}:50300"
+        env:
+          TZ: "{{ slskd_timezone }}"
+          PUID: "{{ slskd_user_id }}"
+          PGID: "{{ slskd_group_id }}"
+          SLSKD_REMOTE_CONFIGURATION: true
+          SLSKD_DOWNLOADS_DIR: "/downloads"
+          SLSKD_INCOMPLETE_DIR: "incomplete"
+        restart_policy: unless-stopped
+
+  when: slskd_enabled is true
+
+- name: Stop slskd
+  block:
+    - name: Stop slskd
+      community.docker.docker_container:
+        name: "{{ slskd_container_name }}"
+        state: absent
+  when: slskd_enabled is false

@@ -1,0 +1,26 @@
+---
+slskd_enabled: false
+
+# directories
+slskd_config_directory: "{{ docker_home }}/slskd/config"
+slskd_download_dir: "{{ downloads_root }}/slskd/download"
+slskd_incomplete_dir: "{{ downloads_root }}/slskd/incomplete"
+
+# uid / gid
+slskd_user_id: "1000"
+slskd_group_id: "1000"
+
+# network
+slskd_http_port: 5030
+slskd_https_port: 5031
+slsdk_external_port: 50300
+
+slskd_timezone: "{{ ansible_nas_timezone }}"
+
+slskd_container_name: "slskd"
+slskd_image_name: "slskd/slskd"
+
+slskd_image_version: "0.23.2.65534-de5103fb"
+
+# specs
+slskd_memory: 1g
