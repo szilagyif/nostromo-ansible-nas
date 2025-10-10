@@ -28,7 +28,7 @@
           PGID: "{{ slskd_group_id }}"
           SLSKD_REMOTE_CONFIGURATION: "true"
           SLSKD_DOWNLOADS_DIR: "/downloads"
-          SLSKD_INCOMPLETE_DIR: "incomplete"
+          SLSKD_INCOMPLETE_DIR: "/incomplete"
         restart_policy: unless-stopped
 
   when: slskd_enabled is true
