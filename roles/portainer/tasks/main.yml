@@ -24,6 +24,7 @@
           - "/etc/timezone:/etc/timezone:ro"
         ports:
           - "{{ portainer_port }}:9000"
+          - "{{ portainer_port_https }}:9443"
         restart_policy: unless-stopped
         memory: "{{ portainer_memory }}"
         labels:
