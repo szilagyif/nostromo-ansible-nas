@@ -5,6 +5,7 @@ slskd_enabled: false
 slskd_config_directory: "{{ docker_home }}/slskd/config"
 slskd_download_dir: "{{ downloads_root }}/slskd/download"
 slskd_incomplete_dir: "{{ downloads_root }}/slskd/incomplete"
+skskd_shared_dir: "{{ music_root }}"
 
 # uid / gid
 slskd_user_id: "1000"

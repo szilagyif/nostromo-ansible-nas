@@ -18,6 +18,7 @@
           - "{{ slskd_config_directory }}:/app"
           - "{{ slskd_download_dir }}:/downloads:rw"
           - "{{ slskd_incomplete_dir }}:/incomplete:rw"
+          - "{{ slskd_shared_dir }}:/shared:ro"
         ports:
           - "{{ slskd_http_port }}:5030"
           - "{{ slskd_https_port }}:5031"
@@ -31,6 +32,7 @@
           SLSKD_SLSK_PASSWORD: "n1pwtromo"
           SLSKD_DOWNLOADS_DIR: "/downloads"
           SLSKD_INCOMPLETE_DIR: "/incomplete"
+          SLSKD_SHARED_DIR: "/shared"
         restart_policy: unless-stopped
 
   when: slskd_enabled is true
