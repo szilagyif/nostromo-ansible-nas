@@ -15,7 +15,7 @@ plextraktsync_timezone: "{{ ansible_nas_timezone }}"
 plextraktsync_container_name: "plextraktsync"
 plextraktsync_image_name: "lscr.io/linuxserver-labs/plextraktsync"
 
-plextrktsync_image_version: "0.34.19-ls185"
+plextraktsync_image_version: "0.34.19-ls185"
 
 # specs
 plextraktsync_memory: 1g
