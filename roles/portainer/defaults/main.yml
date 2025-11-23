@@ -14,7 +14,7 @@ portainer_ip_allowlist: "0.0.0.0/0"
 # docker
 portainer_container_name: "portainer"
 portainer_image_name: "portainer/portainer-ce"
-portainer_image_version: "2.33.3"
+portainer_image_version: "2.33.4"
 
 # specs
 portainer_memory: 1g
