@@ -21,7 +21,7 @@ slskd_timezone: "{{ ansible_nas_timezone }}"
 slskd_container_name: "slskd"
 slskd_image_name: "slskd/slskd"
 
-slskd_image_version: "0.23.2.65534-de5103fb"
+slskd_image_version: "0.24.0.65534-318d1c16"
 
 # specs
 slskd_memory: 1g
