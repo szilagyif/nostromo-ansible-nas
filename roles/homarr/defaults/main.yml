@@ -6,7 +6,7 @@ homarr_data_directory: "{{ docker_home }}/homarr"
 
 homarr_container_name: "homarr"
 homarr_image_name: "ghcr.io/homarr-labs/homarr"
-homarr_image_version: "v1.43.3"
+homarr_image_version: "v1.44.0"
 homarr_port: "7575"
 
 homarr_secret_key: "6750e998fa0b14c6643358da47c7c62d0e8d1ded8113a1e6e563699e796f1c69"
